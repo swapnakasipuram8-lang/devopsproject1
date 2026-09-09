@@ -1,0 +1,42 @@
+services:
+
+  mongo:
+    image: mongo:7
+    container_name: FoodWasteManagement-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand({ ping: 1 }).ok' localhost:27017/test | grep 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: FoodWasteManagement-backend
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./backend/.env
+    environment:
+      PORT: 5001
+      MONGO_URI: mongodb://mongo:27017/foodwasteDB
+      JWT_SECRET: mysecretkey
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: FoodWasteManagement-frontend
+    ports:
+      - "5500:5500"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

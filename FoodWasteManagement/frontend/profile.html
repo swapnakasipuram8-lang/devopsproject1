@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🍽 SFWMS</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="food.html">
+                    <i class="fa fa-utensils"></i> Food
+                </a>
+            </li>
+
+            <li>
+                <a href="waste.html">
+                    <i class="fa fa-trash"></i> Waste
+                </a>
+            </li>
+
+            <li>
+                <a href="donation.html">
+                    <i class="fa fa-heart"></i> Donation
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fa fa-chart-bar"></i> Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html" class="active">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>My Profile</h1>
+
+            <h3>Manage Your Account 👤</h3>
+
+        </div>
+
+        <div class="card">
+
+            <h2>User Information</h2>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address">
+
+            <button
+                class="btn btn-primary"
+                onclick="updateProfile()">
+
+                <i class="fa fa-save"></i>
+                Update Profile
+
+            </button>
+
+        </div>
+
+        <div class="card" style="margin-top:30px;">
+
+            <h2>Account Information</h2>
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <td id="profileName">-</td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td id="profileEmail">-</td>
+                </tr>
+
+                <tr>
+                    <th>Account Status</th>
+                    <td>Active</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/profile.js"></script>
+
+</body>
+
+</html>

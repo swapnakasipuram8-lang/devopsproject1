@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reports</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>🍽 SFWMS</h2>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+
+<li><a href="food.html"><i class="fa fa-utensils"></i> Food</a></li>
+
+<li><a href="waste.html"><i class="fa fa-trash"></i> Waste</a></li>
+
+<li><a href="donation.html"><i class="fa fa-heart"></i> Donation</a></li>
+
+<li><a href="reports.html" class="active"><i class="fa fa-chart-bar"></i> Reports</a></li>
+
+<li><a href="profile.html"><i class="fa fa-user"></i> Profile</a></li>
+
+<li><a href="#" onclick="logout()"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<h1>Reports & Analytics</h1>
+
+<div class="cards">
+
+<div class="card dashboard-card">
+<h2 id="users">0</h2>
+<p>Total Users</p>
+</div>
+
+<div class="card dashboard-card">
+<h2 id="foods">0</h2>
+<p>Total Foods</p>
+</div>
+
+<div class="card dashboard-card">
+<h2 id="wastes">0</h2>
+<p>Waste Reports</p>
+</div>
+
+<div class="card dashboard-card">
+<h2 id="donations">0</h2>
+<p>Donations</p>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:30px;">
+
+<h2>System Overview</h2>
+
+<canvas id="reportChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="assets/js/reports.js"></script>
+
+</body>
+
+</html>

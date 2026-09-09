@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donation Management</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===============================
+         SIDEBAR
+    ================================ -->
+
+    <div class="sidebar">
+
+        <h2>🍽 SFWMS</h2>
+
+        <ul>
+
+            <!-- Dashboard -->
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <!-- Food -->
+            <li>
+                <a href="food.html">
+                    <i class="fa fa-utensils"></i>
+                    Food
+                </a>
+            </li>
+
+            <!-- Waste -->
+            <li>
+                <a href="waste.html">
+                    <i class="fa fa-trash"></i>
+                    Waste
+                </a>
+            </li>
+
+            <!-- Donation -->
+            <li>
+                <a href="donation.html" class="active">
+                    <i class="fa fa-heart"></i>
+                    Donation
+                </a>
+            </li>
+
+           
+
+            <!-- Logout -->
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ===============================
+         MAIN CONTENT
+    ================================ -->
+
+    <div class="main">
+
+
+        <!-- ===============================
+             TOPBAR
+        ================================ -->
+
+        <div class="topbar">
+
+            <h1>Donation Management</h1>
+
+            <h3>
+                Donate Food to NGOs & People in Need ❤️
+            </h3>
+
+        </div>
+
+
+        <!-- ===============================
+             ADD DONATION FORM
+        ================================ -->
+
+        <div class="card">
+
+            <h2>Add Donation</h2>
+
+
+            <!-- Donor Name -->
+
+            <input
+                type="text"
+                id="donorName"
+                placeholder="Donor Name"
+                autocomplete="off">
+
+
+            <!-- Receiver Name -->
+
+            <input
+                type="text"
+                id="receiverName"
+                placeholder="Receiver / NGO Name"
+                autocomplete="off">
+
+
+            <!-- Food Name -->
+
+            <input
+                type="text"
+                id="foodName"
+                placeholder="Food Name"
+                autocomplete="off">
+
+
+            <!-- Quantity -->
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity"
+                min="1">
+
+
+            <!-- Location -->
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location"
+                autocomplete="off">
+
+
+            <!-- Add Donation Button -->
+
+            <button
+                type="button"
+                class="btn btn-success"
+                onclick="addDonation()">
+
+                <i class="fa fa-plus"></i>
+                Add Donation
+
+            </button>
+
+        </div>
+
+
+        <!-- ===============================
+             DONATION LIST
+        ================================ -->
+
+        <div class="card" style="margin-top: 30px;">
+
+            <h2>Donation List</h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Donor</th>
+
+                        <th>Receiver</th>
+
+                        <th>Food</th>
+
+                        <th>Quantity</th>
+
+                        <th>Location</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="donationTable">
+
+                    <!-- Donation records will be loaded here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===============================
+         DONATION JAVASCRIPT
+    ================================ -->
+
+    <script src="assets/js/donation.js"></script>
+
+</body>
+
+</html>

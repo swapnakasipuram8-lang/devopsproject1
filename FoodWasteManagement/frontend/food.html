@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Management</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🍽 SFWMS</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="food.html" class="active">
+                    <i class="fa fa-utensils"></i> Food
+                </a>
+            </li>
+
+            <li>
+                <a href="waste.html">
+                    <i class="fa fa-trash"></i> Waste
+                </a>
+            </li>
+
+            <li>
+                <a href="donation.html">
+                    <i class="fa fa-heart"></i> Donation
+                </a>
+            </li>
+
+            
+            <li>
+                <a href="profile.html">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Food Management</h1>
+
+            <h3>Manage Available Food Records 🍱</h3>
+
+        </div>
+
+        <!-- Add Food -->
+
+        <div class="card">
+
+            <h2>Add Food</h2>
+
+            <input
+                type="text"
+                id="foodName"
+                placeholder="Food Name">
+
+            <input
+                type="text"
+                id="category"
+                placeholder="Category">
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity">
+
+            <input
+                type="date"
+                id="expiryDate">
+
+            <input
+                type="text"
+                id="donorName"
+                placeholder="Donor Name">
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location">
+
+            <button
+                class="btn btn-success"
+                onclick="addFood()">
+
+                <i class="fa fa-plus"></i>
+                Add Food
+
+            </button>
+
+        </div>
+
+        <!-- Food List -->
+
+        <div class="card" style="margin-top:30px;">
+
+            <h2>Available Food Records</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Food</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Expiry Date</th>
+                        <th>Donor</th>
+                        <th>Location</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="foodTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/food.js"></script>
+
+</body>
+
+</html>

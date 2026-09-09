@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Waste Management</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- ===============================
+         SIDEBAR
+    ================================ -->
+
+    <div class="sidebar">
+
+        <h2>🍽 SFWMS</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="food.html">
+                    <i class="fa fa-utensils"></i>
+                    Food
+                </a>
+            </li>
+
+            <li>
+                <a href="waste.html" class="active">
+                    <i class="fa fa-trash"></i>
+                    Waste
+                </a>
+            </li>
+
+            <li>
+                <a href="donation.html">
+                    <i class="fa fa-heart"></i>
+                    Donation
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fa fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- ===============================
+         MAIN CONTENT
+    ================================ -->
+
+    <div class="main">
+
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Waste Management</h1>
+
+            <h3>
+                Monitor Food Waste Efficiently ♻️
+            </h3>
+
+        </div>
+
+
+
+        <!-- ===============================
+             ADD WASTE FORM
+        ================================ -->
+
+        <div class="card">
+
+            <h2>Add Waste Record</h2>
+
+
+            <!-- Food Name -->
+
+            <input
+                type="text"
+                id="foodName"
+                placeholder="Food Name"
+                autocomplete="off">
+
+
+            <!-- Reason -->
+
+            <input
+                type="text"
+                id="reason"
+                placeholder="Reason for Waste"
+                autocomplete="off">
+
+
+            <!-- Quantity -->
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity"
+                min="1">
+
+
+            <!-- Date -->
+
+            <input
+                type="date"
+                id="date">
+
+
+            <!-- Location -->
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location"
+                autocomplete="off">
+
+
+            <!-- Add Button -->
+
+            <button
+                type="button"
+                id="saveBtn"
+                class="btn btn-success"
+                onclick="saveWaste()">
+
+                <i class="fa fa-plus"></i>
+                Add Waste
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ===============================
+             WASTE TABLE
+        ================================ -->
+
+        <div class="card" style="margin-top:30px;">
+
+            <h2>Waste Records</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Food</th>
+
+                        <th>Reason</th>
+
+                        <th>Quantity</th>
+
+                        <th>Date</th>
+
+                        <th>Location</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="wasteTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         JAVASCRIPT
+    ================================ -->
+
+    <script src="assets/js/waste.js"></script>
+
+</body>
+
+</html>
